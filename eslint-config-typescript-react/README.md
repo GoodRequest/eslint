@@ -4,9 +4,14 @@
 ESLint config for JavaScript + TypeScript projects
 
 ## Usage
-1. Install package:
+1. If using **npm 7+** you can install this package and npm automatically installs all peer dependencies.
 ```
 npm install @goodrequest/eslint-config-typescript-react --save-dev
+```
+
+If you are using an older npm version, you have to install all the peer dependencies listed with:
+```
+npm info "@goodrequest/eslint-config-typescript-react" peerDependencies
 ```
 
 2. Create `.eslintrc.json` file in your project root directory and add following lines:
