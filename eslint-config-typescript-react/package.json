@@ -1,6 +1,6 @@
 {
   "name": "@goodrequest/eslint-config-typescript-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "GoodRequest ESLint config for TypeScript + React projects (beta testing)",
   "main": "index.js",
   "keywords": [
