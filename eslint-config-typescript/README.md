@@ -14,16 +14,16 @@ If you are using an **older npm** version, then the **next step** is to install 
 npm info "@goodrequest/eslint-config-typescript" peerDependencies
 
 {
-  eslint: '8.2.0',
-  'eslint-plugin-import': '2.25.3',
-  'eslint-plugin-prettier': '4.0.0',
-  '@typescript-eslint/eslint-plugin': '5.4.0',
-  prettier: '2.4.1'
+  eslint: '^8.2.0',
+  'eslint-plugin-import': '^2.25.3',
+  'eslint-plugin-prettier': '^4.0.0',
+  '@typescript-eslint/eslint-plugin': '^5.4.0',
+  prettier: '^2.4.1'
 }
 ```
 Here is `npm install` command you can use:
 ```
-npm install eslint@8.2.0 eslint-plugin-import@2.25.3 eslint-plugin-prettier@4.0.0 @typescript-eslint/eslint-plugin@5.4.0 prettier@2.4.1 --save-dev
+npm install eslint@^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-prettier@^4.0.0 @typescript-eslint/eslint-plugin@^5.4.0 prettier@^2.4.1 --save-dev
 ```
 
 2. Create `.eslintrc.json` file in your project root directory and add following lines:

@@ -1,7 +1,7 @@
 {
   "name": "@goodrequest/eslint-config-javascript-react",
-  "version": "1.1.1",
-  "description": "GoodRequest ESLint config for JavaScript + React projects (beta testing)",
+  "version": "1.2.0",
+  "description": "GoodRequest ESLint config for JavaScript + React projects",
   "main": "index.js",
   "keywords": [
     "eslint",
@@ -12,31 +12,31 @@
     "type": "git",
     "url": "https://github.com/GoodRequest/eslint.git"
   },
-  "homepage": "https://github.com/GoodRequest/eslint",
+  "homepage": "https://github.com/GoodRequest/eslint/tree/master/eslint-config-javascript-react",
   "bugs": {
     "url": "https://github.com/GoodRequest/eslint/issues"
   },
   "license": "ISC",
   "dependencies": {
-    "eslint-config-airbnb": "19.0.0",
-    "eslint-config-prettier": "8.3.0"
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-prettier": "^8.3.0"
   },
   "devDependencies": {
-    "eslint": "8.2.0",
-    "eslint-plugin-import": "2.25.3",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.27.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "prettier": "2.4.1"
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.4.1"
   },
   "peerDependencies": {
-    "eslint": "8.2.0",
-    "eslint-plugin-import": "2.25.3",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.27.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "prettier": "2.4.1"
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.4.1"
   }
 }
