@@ -19,6 +19,7 @@ module.exports = {
     "no-shadow": "off",
     "@typescript-eslint/lines-between-class-members": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-shadow": ["error"]
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-floating-promises": "error"
   },
 };
