@@ -1,42 +1,27 @@
 # eslint-config-typescript-react
 [![npm version](https://badge.fury.io/js/@goodrequest%2Feslint-config-typescript-react.svg)](https://badge.fury.io/js/@goodrequest%2Feslint-config-typescript-react)
 
-ESLint config for JavaScript + TypeScript projects
+ESLint config for React + TypeScript projects
 
 ## Usage
-1. If using **npm 7+** you can install this package and npm automatically installs all peer dependencies.
+1. You can install package using this command:
 ```
 npm install @goodrequest/eslint-config-typescript-react --save-dev
 ```
 
-If you are using an **older npm** version, then the **next step** is to install all the peer dependencies listed with:
+2. **Next step** is to install all the peer dependencies:
 ```
-npm info "@goodrequest/eslint-config-typescript-react" peerDependencies
-
-{
-  eslint: '^8.2.0',
-  'eslint-plugin-import': '^2.25.3',
-  'eslint-plugin-jsx-a11y': '^6.5.1',
-  'eslint-plugin-prettier': '^4.0.0',
-  'eslint-plugin-react': '^7.27.0',
-  'eslint-plugin-react-hooks': '^4.3.0',
-  '@typescript-eslint/eslint-plugin': '^5.3.1',
-  prettier: '^2.4.1'
-}
-```
-Here is `npm install` command you can use:
-```
-npm install eslint@^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-prettier@^4.0.0 eslint-plugin-react@^7.27.0 eslint-plugin-react-hooks@^4.3.0 @typescript-eslint/eslint-plugin@^5.3.1 prettier@^2.4.1 --save-dev
+npm install eslint@^8.50.0 eslint-plugin-import@^2.28.1 eslint-plugin-jsx-a11y@^6.7.1 eslint-plugin-prettier@^5.0.0 eslint-plugin-react@^7.33.2 eslint-plugin-react-hooks@^4.6.0 @typescript-eslint/eslint-plugin@^6.7.4 prettier@^3.0.3 --save-dev
 ```
 
-2. Create `.eslintrc.json` file in your project root directory and add following lines:
+3. Create `.eslintrc.json` file in your project root directory and add following lines:
 ```
 {
   "extends": ["@goodrequest/eslint-config-typescript-react"]
 }
 ```
 
-3. Create `.prettierrc.json` file in your project root directory and add following lines:
+4. Create `.prettierrc.json` file in your project root directory and add following lines:
 ```
 {
   "useTabs": true,
@@ -49,7 +34,7 @@ npm install eslint@^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6
 }
 ```
 
-4. Create `.editorconfig` file in your project root directory and add following lines:
+5. Create `.editorconfig` file in your project root directory and add following lines:
 ```
 [*]
 indent_style = tab
