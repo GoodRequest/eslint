@@ -1,0 +1,25 @@
+name: Publish Package to npmjs
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Choose package to publish'
+        required: true
+        type: choice
+        options:
+          - 'eslint-config-typescript-next'
+          - 'eslint-config-typescript'
+          - 'eslint-config-typescript-react'
+          - 'eslint-config-javascript-react'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: cd ./${{ github.event.inputs.package }}
+      - run: ls -al
