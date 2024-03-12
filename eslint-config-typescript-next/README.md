@@ -1,4 +1,4 @@
-# eslint-config-typescript-react
+# eslint-config-typescript-next
 [![npm version](https://badge.fury.io/js/@goodrequest%2Feslint-config-typescript-next.svg)](https://badge.fury.io/js/@goodrequest%2Feslint-config-typescript-next)
 
 ESLint config for Next.js + TypeScript projects
