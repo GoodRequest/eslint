@@ -1,6 +1,6 @@
 {
   "name": "@goodrequest/eslint-config-typescript-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GoodRequest ESLint config for TypeScript + Next.js projects",
   "main": "index.js",
   "keywords": [
