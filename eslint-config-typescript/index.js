@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     node: true,
-    es2021: true,
+    es2024: true,
   },
   plugins: ["@typescript-eslint", "prettier"],
   extends: [
@@ -12,7 +12,6 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2022,
     project: "./tsconfig.json",
   },
   rules: {

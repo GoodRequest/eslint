@@ -4,36 +4,24 @@
 ESLint config for TypeScript projects.
 
 ## Usage
-1. If using **npm 7+** you can install this package and npm automatically installs all peer dependencies.
+1. You can install package using this command:
 ```
 npm install @goodrequest/eslint-config-typescript --save-dev
 ```
 
-If you are using an **older npm** version, then the **next step** is to install all the peer dependencies listed with:
+2. **Next step** is to install all the peer dependencies:
 ```
-npm info "@goodrequest/eslint-config-typescript" peerDependencies
-
-{
-  eslint: '^8.2.0',
-  'eslint-plugin-import': '^2.25.3',
-  'eslint-plugin-prettier': '^4.0.0',
-  '@typescript-eslint/eslint-plugin': '^5.4.0',
-  prettier: '^2.4.1'
-}
-```
-Here is `npm install` command you can use:
-```
-npm install eslint@^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-prettier@^4.0.0 @typescript-eslint/eslint-plugin@^5.4.0 prettier@^2.4.1 --save-dev
+npm install eslint@^8.57.0 eslint-plugin-import@^2.29.1 eslint-plugin-prettier@^5.1.3 @typescript-eslint/eslint-plugin@^7.2.0 prettier@^3.2.5 --save-dev
 ```
 
-2. Create `.eslintrc.json` file in your project root directory and add following lines:
+3. Create `.eslintrc.json` file in your project root directory and add following lines:
 ```
 {
   "extends": ["@goodrequest/eslint-config-typescript"]
 }
 ```
 
-3. Create `.prettierrc.json` file in your project root directory and add following lines:
+4. Create `.prettierrc.json` file in your project root directory and add following lines:
 ```
 {
   "useTabs": true,
@@ -46,7 +34,7 @@ npm install eslint@^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-prettier@^4
 }
 ```
 
-4. Create `.editorconfig` file in your project root directory and add following lines:
+5. Create `.editorconfig` file in your project root directory and add following lines:
 ```
 [*]
 indent_style = tab
