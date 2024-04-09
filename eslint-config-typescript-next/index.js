@@ -13,7 +13,6 @@ module.exports = {
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:@next/next/recommended",
     "plugin:prettier/recommended"
-
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -82,6 +81,7 @@ module.exports = {
       {
         "allowAsProps": true
       }
-    ]
+    ],
+    "react/jsx-key": "warn"
   },
 };

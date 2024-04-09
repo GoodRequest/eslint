@@ -11,7 +11,7 @@ npm install @goodrequest/eslint-config-typescript-next --save-dev
 
 2. **Next step** is to install all the peer dependencies:
 ```
-npm install @next/eslint-plugin-next@^14.1.4 @typescript-eslint/eslint-plugin@^7.6.0 eslint@^9.0.0 eslint-plugin-import@^2.29.1 eslint-plugin-jsx-a11y@^6.8.0 eslint-plugin-prettier@^5.1.3 eslint-plugin-react@^7.34.1 eslint-plugin-react-hooks@^4.6.0 prettier@^3.2.5 --save-dev
+npm install {{peerDeps}} --save-dev
 ```
 
 3. Create `.eslintrc.json` file in your project root directory and add following lines:
