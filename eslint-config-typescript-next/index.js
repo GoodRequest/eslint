@@ -82,6 +82,7 @@ module.exports = {
       {
         "allowAsProps": true
       }
-    ]
+    ],
+    "react/jsx-key": "warn"
   },
 };
