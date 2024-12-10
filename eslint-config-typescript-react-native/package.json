@@ -1,0 +1,42 @@
+{
+    "name": "@goodrequest/eslint-config-typescript-react-native",
+    "version": "1.0.0-rc1",
+    "description": "GoodRequest ESLint config for TypeScript + React Native projects",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "eslintconfig"
+    ],
+    "author": "GoodRequest",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GoodRequest/eslint.git"
+    },
+    "homepage": "https://github.com/GoodRequest/eslint/tree/master/eslint-config-typescript-react-native",
+    "bugs": {
+        "url": "https://github.com/GoodRequest/eslint/issues"
+    },
+    "license": "ISC",
+    "scripts": {
+        "generate-readme": "node generate-readme.js"
+    },
+    "dependencies": {
+        "@tanstack/eslint-plugin-query": "^5.28.11",
+        "@typescript-eslint/eslint-plugin": "^7.6.0",
+        "@typescript-eslint/parser": "^7.6.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb-typescript": "^18.0.0",
+        "eslint-config-expo": "^8.0.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "eslint-plugin-react": "^7.34.1",
+        "eslint-plugin-react-hooks": "^4.6.0"
+    },
+    "peerDependencies": {
+        "eslint": "^8.57.0",
+        "prettier": "^3.2.5",
+        "typescript": "^5.4.4"
+    }
+}
