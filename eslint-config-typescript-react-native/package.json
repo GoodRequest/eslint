@@ -1,6 +1,6 @@
 {
     "name": "@goodrequest/eslint-config-typescript-react-native",
-    "version": "1.0.0-rc1",
+    "version": "1.0.0",
     "description": "GoodRequest ESLint config for TypeScript + React Native projects",
     "main": "index.js",
     "keywords": [
