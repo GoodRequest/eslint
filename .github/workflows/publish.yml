@@ -12,8 +12,9 @@ on:
         options:
           - 'eslint-config-typescript'
           - 'eslint-config-typescript-next'
-          - 'eslint-config-typescript-react'
           - 'eslint-config-javascript-react'
+          - 'eslint-config-typescript-react'
+          - 'eslint-config-typescript-react-native'
           
 jobs:
   Build:
