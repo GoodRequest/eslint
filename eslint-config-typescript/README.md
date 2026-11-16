@@ -11,7 +11,7 @@ npm install @goodrequest/eslint-config-typescript --save-dev
 
 2. **Next step** is to install all the peer dependencies:
 ```
-npm install eslint@^8.57.0 eslint-plugin-import@^2.29.1 eslint-plugin-prettier@^5.1.3 @typescript-eslint/eslint-plugin@^7.2.0 prettier@^3.2.5 --save-dev
+npm install eslint@^8.57.0 eslint-plugin-import@^2.29.1 eslint-plugin-prettier@^5.1.3 @typescript-eslint/eslint-plugin@^8.72.1 @typescript-eslint/parser@^8.72.1 prettier@^3.2.5 --save-dev
 ```
 
 3. Create `.eslintrc.json` file in your project root directory and add following lines:
