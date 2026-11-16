@@ -18,6 +18,7 @@ const goodrequest = require("@goodrequest/eslint-config-typescript");
 module.exports = [
   ...goodrequest,
   {
+    files: ["**/*.ts"],
     languageOptions: {
       parserOptions: { project: "./tsconfig.json", tsconfigRootDir: __dirname },
     },
@@ -60,7 +61,7 @@ npm uninstall @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-
 
 2. Replace `.eslintrc.*` and `.eslintignore` with `eslint.config.js` (see [Usage](#usage)):
 - `extends` → spread `...goodrequest` first.
-- `parserOptions` → `languageOptions.parserOptions`, `env` → `languageOptions.globals`.
+- `parserOptions` → `languageOptions.parserOptions` in an object with `files: ["**/*.ts"]`, so JS files are linted without type information. `env` → `languageOptions.globals`.
 - `ignorePatterns` / `.eslintignore` → `{ ignores: [...] }` object.
 - `overrides` → separate objects with `files`; glob `*.ts` becomes `**/*.ts`.
 - Remove `--ext` from `eslint` CLI scripts, `.ts` files are linted by default.

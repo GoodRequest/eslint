@@ -1,3 +1,4 @@
+const disableTypeChecked = require("@typescript-eslint/eslint-plugin").configs["flat/disable-type-checked"];
 const bestPractices = require("./airbnb/best-practices");
 const es6 = require("./airbnb/es6");
 const imports = require("./airbnb/imports");
@@ -45,10 +46,13 @@ module.exports = [
         extraneousSeverity,
         {
           ...extraneousOptions,
-          devDependencies: extraneousOptions.devDependencies.flatMap((pattern) => {
-            const tsPattern = pattern.replace(/\bjs(x?)\b/g, "ts$1");
-            return tsPattern === pattern ? [pattern] : [pattern, tsPattern];
-          }),
+          devDependencies: [
+            ...extraneousOptions.devDependencies.flatMap((pattern) => {
+              const tsPattern = pattern.replace(/\bjs(x?)\b/g, "ts$1");
+              return tsPattern === pattern ? [pattern] : [pattern, tsPattern];
+            }),
+            "**/eslint.config.{js,mjs,cjs,ts,mts,cts}",
+          ],
         },
       ],
     },
@@ -56,26 +60,28 @@ module.exports = [
   {
     files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
     rules: {
-      "constructor-super": "off",
-      "getter-return": "off",
-      "no-const-assign": "off",
-      "no-dupe-args": "off",
-      "no-dupe-class-members": "off",
-      "no-dupe-keys": "off",
-      "no-func-assign": "off",
-      "no-import-assign": "off",
-      "no-new-symbol": "off",
-      "no-obj-calls": "off",
-      "no-redeclare": "off",
-      "no-setter-return": "off",
-      "no-this-before-super": "off",
-      "no-undef": "off",
-      "no-unreachable": "off",
-      "no-unsafe-negation": "off",
       "valid-typeof": "off",
       "import/named": "off",
       "import/no-named-as-default-member": "off",
       "import/no-unresolved": "off",
+    },
+  },
+  {
+    ...disableTypeChecked,
+    files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
+    rules: {
+      ...disableTypeChecked.rules,
+      "dot-notation": bestPractices["dot-notation"],
+      "no-implied-eval": bestPractices["no-implied-eval"],
+      "no-new-func": bestPractices["no-new-func"],
+      "no-throw-literal": bestPractices["no-throw-literal"],
+      "no-return-await": bestPractices["no-return-await"],
+    },
+  },
+  {
+    files: ["**/*.js", "**/*.cjs"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 ];

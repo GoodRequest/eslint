@@ -9,11 +9,8 @@ const typescript = require("./typescript");
 module.exports = [
   {
     languageOptions: {
-      globals: { ...globals.node, ...globals.es2024 },
+      globals: globals.node,
       parser: tsParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
     },
     plugins: {
       import: importX,
@@ -26,8 +23,15 @@ module.exports = [
     },
     rules: airbnb,
   },
+  {
+    files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+  },
   ...tsPlugin.configs["flat/recommended"],
-  ...typescript,
   {
     rules: {
       "lines-between-class-members": "off",
@@ -36,5 +40,6 @@ module.exports = [
       "@typescript-eslint/no-floating-promises": "error",
     },
   },
+  ...typescript,
   prettierRecommended,
 ];
