@@ -4,21 +4,25 @@
 ESLint config for TypeScript projects.
 
 ## Usage
-1. You can install package using this command:
+1. Install the package with its peer dependencies (ESLint 10 needs Node.js `^20.19.0 || ^22.13.0 || >=24`):
 ```
-npm install @goodrequest/eslint-config-typescript --save-dev
-```
-
-2. **Next step** is to install all the peer dependencies:
-```
-npm install eslint@^8.57.0 eslint-plugin-import@^2.29.1 eslint-plugin-prettier@^5.1.3 @typescript-eslint/eslint-plugin@^8.72.1 @typescript-eslint/parser@^8.72.1 prettier@^3.2.5 --save-dev
+npm install @goodrequest/eslint-config-typescript eslint@^10.0.0 prettier@^3.2.5 --save-dev
 ```
 
-3. Create `.eslintrc.json` file in your project root directory and add following lines:
+2. **Next step** is to make sure `typescript` (`>=4.8.4 <6.1.0`) is installed in your project. TypeScript and import plugins, the parser and Prettier integration are bundled.
+
+3. Create `eslint.config.js` file in your project root directory and add following lines:
 ```
-{
-  "extends": ["@goodrequest/eslint-config-typescript"]
-}
+const goodrequest = require("@goodrequest/eslint-config-typescript");
+
+module.exports = [
+  ...goodrequest,
+  {
+    languageOptions: {
+      parserOptions: { project: "./tsconfig.json", tsconfigRootDir: __dirname },
+    },
+  },
+];
 ```
 
 4. Create `.prettierrc.json` file in your project root directory and add following lines:
@@ -46,14 +50,24 @@ insert_final_newline = true
 ```
 
 ## Migrating from 1.x to 2.0
-2.0 moves to typescript-eslint v8 (TypeScript `>=4.8.4 <6.1.0`) and drops `eslint-config-airbnb-typescript`. ESLint 8 and `eslint-config-airbnb-base` stay.
+2.0 moves to ESLint 10 flat config, typescript-eslint v8 and `eslint-plugin-import-x`. The `eslint-config-airbnb-base` rules are vendored in `airbnb/` (MIT, see `airbnb/LICENSE.md`), so the rule set stays the same.
 
-1. Install the new peer dependencies (`@typescript-eslint/parser` is no longer bundled):
+1. Update dependencies. Plugins and the parser are now dependencies of this package, so they can be removed from your project unless you import them yourself:
 ```
-npm install @goodrequest/eslint-config-typescript@^2.0.0 @typescript-eslint/eslint-plugin@^8.72.1 @typescript-eslint/parser@^8.72.1 --save-dev
+npm install @goodrequest/eslint-config-typescript@^2.0.0 eslint@^10.0.0 --save-dev
+npm uninstall @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import eslint-plugin-prettier eslint-config-airbnb-base eslint-config-airbnb-typescript
 ```
 
-2. Rename rules in your own config and `eslint-disable` comments:
+2. Replace `.eslintrc.*` and `.eslintignore` with `eslint.config.js` (see [Usage](#usage)):
+- `extends` → spread `...goodrequest` first.
+- `parserOptions` → `languageOptions.parserOptions`, `env` → `languageOptions.globals`.
+- `ignorePatterns` / `.eslintignore` → `{ ignores: [...] }` object.
+- `overrides` → separate objects with `files`; glob `*.ts` becomes `**/*.ts`.
+- Remove `--ext` from `eslint` CLI scripts, `.ts` files are linted by default.
+
+3. `import/*` rule names stay the same (`eslint-plugin-import-x` is registered under the `import` prefix). Plugin settings use the `import-x/` prefix, e.g. `import-x/resolver-next`.
+
+4. Rename rules in your own config and `eslint-disable` comments:
 
 | 1.x | 2.0 |
 | --- | --- |
@@ -62,9 +76,10 @@ npm install @goodrequest/eslint-config-typescript@^2.0.0 @typescript-eslint/esli
 | `@typescript-eslint/no-throw-literal` | `@typescript-eslint/only-throw-error` |
 | `@typescript-eslint/no-loop-func`, `@typescript-eslint/no-loss-of-precision` | core `no-loop-func`, `no-loss-of-precision` |
 
-3. Expect new findings from the typescript-eslint v8 defaults:
+5. Expect new findings from upstream defaults:
 - `@typescript-eslint/no-unused-vars` reports unused `catch` parameters, use `catch {}` instead of `catch (error) {}`.
 - `@typescript-eslint/no-require-imports` reports every `require()` call, not only `const x = require()`.
 - `@typescript-eslint/prefer-namespace-keyword` reports `module Foo {}`, use `namespace Foo {}`.
-- `eslint-disable-next-line` placed on the first line of a file no longer applies to file-level rules such as `max-classes-per-file`, use `/* eslint-disable <rule> */` instead.
+- Unused `eslint-disable` comments are reported as warnings (`linterOptions.reportUnusedDisableDirectives`).
+- `no-shadow-restricted-names` reports shadowing `globalThis`, `no-constant-condition` allows `while (true)`.
 - JS files linted with `parserOptions.project` must be included in that tsconfig (e.g. `allowJs: true`) or ignored.
